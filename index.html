@@ -5,8 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Free DevOps & Tech Courses in Israel | Infinity Labs R&D</title>
-  <meta name="description" content="Free high-tech training in Israel: DevOps, Software Development, Cybersecurity & AI Research. No tech background required. Infinity Labs R&D." />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Free high-tech training: DevOps, Software Development, Cybersecurity & AI Research. No tech background required. Infinity Labs R&D." />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
     body{font-family:'Outfit',sans-serif;background:white;color:#1f2937;line-height:1.6;overflow-x:hidden;}
@@ -58,6 +58,13 @@
       0% { transform: translateX(-25%); }
       100% { transform: translateX(-75%); }
     }
+
+    footer {
+      font-size: 1rem;
+      margin-top: 2rem;
+      padding: 1rem;
+      color: #4b5563;
+    }
   </style>
 </head>
 <body>
@@ -82,6 +89,7 @@
       <p id="paragraph-en"></p>
       <p id="paragraph2-en"></p>
       <a id="cta-en" class="button" href="#" target="_blank">Check It Out</a>
+      <footer id="footer-en"></footer>
     </div>
 
     <div class="hebrew section">
@@ -90,6 +98,7 @@
       <p id="paragraph-he"></p>
       <p id="paragraph2-he"></p>
       <a id="cta-he" class="button" href="#" target="_blank">לפרטים נוספים</a>
+      <footer id="footer-he"></footer>
     </div>
   </div>
 
@@ -109,12 +118,14 @@
           document.getElementById('paragraph-en').textContent = data.paragraph;
           document.getElementById('paragraph2-en').textContent = data.paragraph2;
           document.getElementById('cta-en').href = data.cta;
+          document.getElementById('footer-en').textContent = data.footer;
         } else {
           document.getElementById('title-he').textContent = data.title;
           document.getElementById('subtitle-he').textContent = data.subtitle;
           document.getElementById('paragraph-he').textContent = data.paragraph;
           document.getElementById('paragraph2-he').textContent = data.paragraph2;
           document.getElementById('cta-he').href = data.cta;
+          document.getElementById('footer-he').textContent = data.footer;
         }
       } catch (err) {
         console.error('Error loading content:', err);
