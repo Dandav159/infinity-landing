@@ -148,11 +148,15 @@
     </div>
 
     <div class="english active">
-      <!-- English content here (same as previous version) -->
+      <h1 id="title-en"></h1>
+      <h2 id="subtitle-en"></h2>
+      <p id="paragraph-en"></p>
     </div>
 
     <div class="hebrew">
-      <!-- Hebrew content here (same as previous version) -->
+      <h1 id="title-he"></h1>
+      <h2 id="subtitle-he"></h2>
+      <p id="paragraph-he"></p>
     </div>
   </div>
 
@@ -162,11 +166,31 @@
     const englishSection = document.querySelector('.english');
     const hebrewSection = document.querySelector('.hebrew');
 
+    async function loadContent(lang) {
+      try {
+        const res = await fetch(`content-${lang}.json`);
+        const data = await res.json();
+
+        if (lang === 'en') {
+          document.getElementById('title-en').textContent = data.title;
+          document.getElementById('subtitle-en').textContent = data.subtitle;
+          document.getElementById('paragraph-en').textContent = data.paragraph;
+        } else if (lang === 'he') {
+          document.getElementById('title-he').textContent = data.title;
+          document.getElementById('subtitle-he').textContent = data.subtitle;
+          document.getElementById('paragraph-he').textContent = data.paragraph;
+        }
+      } catch (err) {
+        console.error("Error loading content:", err);
+      }
+    }
+
     englishBtn.addEventListener('click', () => {
       englishSection.classList.add('active');
       hebrewSection.classList.remove('active');
       englishBtn.classList.add('active');
       hebrewBtn.classList.remove('active');
+      loadContent('en');
     });
 
     hebrewBtn.addEventListener('click', () => {
@@ -174,7 +198,11 @@
       englishSection.classList.remove('active');
       hebrewBtn.classList.add('active');
       englishBtn.classList.remove('active');
+      loadContent('he');
     });
+
+    // Load English by default
+    loadContent('en');
   </script>
 </body>
 </html>
