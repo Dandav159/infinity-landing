@@ -1,3 +1,4 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,10 +10,10 @@
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
     body{font-family:'Inter',sans-serif;background:linear-gradient(to right,#f8fafc,#eef2f7);color:#1f2937;line-height:1.6;}
-    .container{max-width:800px;margin:0 auto;padding:2rem;animation:fadeIn 1s ease-in-out;text-align:center;}
+    .container{max-width:800px;margin:0 auto;padding:2rem;text-align:center;animation:fadeIn 1s ease-in-out;}
     @keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
     h1,h2{font-weight:700;margin-bottom:.75rem} h1{font-size:2.5rem} h2{font-size:2rem}
-    p,ul{margin:1rem auto;font-size:1.125rem;max-width:700px} ul{padding-left:1.5rem;text-align:left}
+    p,ul{margin:1rem auto;font-size:1.125rem;max-width:700px;text-align:center} ul{padding-left:1.5rem;text-align:left}
     a.button{display:inline-block;padding:.75rem 1.5rem;background-color:#3b82f6;color:#fff;text-decoration:none;border-radius:10px;font-weight:600;transition:all .3s;box-shadow:0 4px 14px rgba(0,0,0,.1);margin-top:1rem}
     a.button:hover{background-color:#1d4ed8;transform:scale(1.05)}
     .section{margin-bottom:3rem;animation:fadeIn 1s ease-in-out}
@@ -21,7 +22,7 @@
     .language-toggle button{padding:.5rem 1.25rem;font-size:1rem;font-weight:600;border:2px solid #3b82f6;border-radius:8px;cursor:pointer;background:#fff;color:#3b82f6;transition:all .3s}
     .language-toggle button:hover{background:#e0f2fe}
     .language-toggle button.active{background:#3b82f6;color:#fff}
-    .hebrew{direction:rtl;text-align:right}
+    .hebrew{direction:rtl;text-align:center}
     @media(max-width:600px){h1{font-size:2rem}h2{font-size:1.5rem}.language-toggle{flex-direction:column}}
   </style>
 </head>
@@ -50,32 +51,49 @@
   </div>
 
   <script>
-    const englishBtn=document.getElementById('englishBtn'),
-          hebrewBtn=document.getElementById('hebrewBtn'),
-          engSection=document.querySelector('.english'),
-          heSection=document.querySelector('.hebrew');
+    const englishBtn = document.getElementById('englishBtn');
+    const hebrewBtn = document.getElementById('hebrewBtn');
+    const engSection = document.querySelector('.english');
+    const heSection = document.querySelector('.hebrew');
 
-    async function loadContent(lang){
-      try{
-        const res=await fetch(`content-${lang}.json`);
-        const data=await res.json();
-        if(lang==='en'){
-          document.getElementById('title-en').textContent=data.title;
-          document.getElementById('subtitle-en').textContent=data.subtitle;
-          document.getElementById('paragraph-en').textContent=data.paragraph;
-          document.getElementById('paragraph2-en').textContent=data.paragraph2;
-          document.getElementById('cta-en').href=data.cta;
+    async function loadContent(lang) {
+      try {
+        const res = await fetch(`content-${lang}.json?v=${new Date().getTime()}`);
+        const data = await res.json();
+        if (lang === 'en') {
+          document.getElementById('title-en').textContent = data.title;
+          document.getElementById('subtitle-en').textContent = data.subtitle;
+          document.getElementById('paragraph-en').textContent = data.paragraph;
+          document.getElementById('paragraph2-en').textContent = data.paragraph2;
+          document.getElementById('cta-en').href = data.cta;
         } else {
-          document.getElementById('title-he').textContent=data.title;
-          document.getElementById('subtitle-he').textContent=data.subtitle;
-          document.getElementById('paragraph-he').textContent=data.paragraph;
-          document.getElementById('paragraph2-he').textContent=data.paragraph2;
-          document.getElementById('cta-he').href=data.cta;
+          document.getElementById('title-he').textContent = data.title;
+          document.getElementById('subtitle-he').textContent = data.subtitle;
+          document.getElementById('paragraph-he').textContent = data.paragraph;
+          document.getElementById('paragraph2-he').textContent = data.paragraph2;
+          document.getElementById('cta-he').href = data.cta;
         }
-      } catch(err){console.error('Error loading content:',err)}
+      } catch (err) {
+        console.error('Error loading content:', err);
+      }
     }
-    englishBtn.addEventListener('click',()=>{engSection.classList.add('active');heSection.classList.remove('active');englishBtn.classList.add('active');hebrewBtn.classList.remove('active');loadContent('en')});
-    hebrewBtn.addEventListener('click',()=>{heSection.classList.add('active');engSection.classList.remove('active');hebrewBtn.classList.add('active');englishBtn.classList.remove('active');loadContent('he')});
+
+    englishBtn.addEventListener('click', () => {
+      engSection.classList.add('active');
+      heSection.classList.remove('active');
+      englishBtn.classList.add('active');
+      hebrewBtn.classList.remove('active');
+      loadContent('en');
+    });
+
+    hebrewBtn.addEventListener('click', () => {
+      heSection.classList.add('active');
+      engSection.classList.remove('active');
+      hebrewBtn.classList.add('active');
+      englishBtn.classList.remove('active');
+      loadContent('he');
+    });
+
     loadContent('en');
   </script>
 </body>
