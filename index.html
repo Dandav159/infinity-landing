@@ -9,11 +9,11 @@
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
     body{font-family:'Inter',sans-serif;background:linear-gradient(to right,#f8fafc,#eef2f7);color:#1f2937;line-height:1.6;}
-    .container{max-width:960px;margin:0 auto;padding:2rem;animation:fadeIn 1s ease-in-out;}
+    .container{max-width:800px;margin:0 auto;padding:2rem;animation:fadeIn 1s ease-in-out;text-align:center;}
     @keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
     h1,h2{font-weight:700;margin-bottom:.75rem} h1{font-size:2.5rem} h2{font-size:2rem}
-    p,ul{margin-bottom:1rem;font-size:1.125rem} ul{padding-left:1.5rem}
-    a.button{display:inline-block;padding:.75rem 1.5rem;background-color:#3b82f6;color:#fff;text-decoration:none;border-radius:10px;font-weight:600;transition:all .3s;box-shadow:0 4px 14px rgba(0,0,0,.1)}
+    p,ul{margin:1rem auto;font-size:1.125rem;max-width:700px} ul{padding-left:1.5rem;text-align:left}
+    a.button{display:inline-block;padding:.75rem 1.5rem;background-color:#3b82f6;color:#fff;text-decoration:none;border-radius:10px;font-weight:600;transition:all .3s;box-shadow:0 4px 14px rgba(0,0,0,.1);margin-top:1rem}
     a.button:hover{background-color:#1d4ed8;transform:scale(1.05)}
     .section{margin-bottom:3rem;animation:fadeIn 1s ease-in-out}
     .hebrew,.english{display:none}.hebrew.active,.english.active{display:block;animation:fadeIn 1s ease-in-out}
@@ -56,21 +56,23 @@
           heSection=document.querySelector('.hebrew');
 
     async function loadContent(lang){
-      const res=await fetch(`content-${lang}.json`);
-      const data=await res.json();
-      if(lang==='en'){
-        document.getElementById('title-en').textContent=data.title;
-        document.getElementById('subtitle-en').textContent=data.subtitle;
-        document.getElementById('paragraph-en').textContent=data.paragraph;
-        document.getElementById('paragraph2-en').textContent=data.paragraph2;
-        document.getElementById('cta-en').href=data.cta;
-      } else {
-        document.getElementById('title-he').textContent=data.title;
-        document.getElementById('subtitle-he').textContent=data.subtitle;
-        document.getElementById('paragraph-he').textContent=data.paragraph;
-        document.getElementById('paragraph2-he').textContent=data.paragraph2;
-        document.getElementById('cta-he').href=data.cta;
-      }
+      try{
+        const res=await fetch(`content-${lang}.json`);
+        const data=await res.json();
+        if(lang==='en'){
+          document.getElementById('title-en').textContent=data.title;
+          document.getElementById('subtitle-en').textContent=data.subtitle;
+          document.getElementById('paragraph-en').textContent=data.paragraph;
+          document.getElementById('paragraph2-en').textContent=data.paragraph2;
+          document.getElementById('cta-en').href=data.cta;
+        } else {
+          document.getElementById('title-he').textContent=data.title;
+          document.getElementById('subtitle-he').textContent=data.subtitle;
+          document.getElementById('paragraph-he').textContent=data.paragraph;
+          document.getElementById('paragraph2-he').textContent=data.paragraph2;
+          document.getElementById('cta-he').href=data.cta;
+        }
+      } catch(err){console.error('Error loading content:',err)}
     }
     englishBtn.addEventListener('click',()=>{engSection.classList.add('active');heSection.classList.remove('active');englishBtn.classList.add('active');hebrewBtn.classList.remove('active');loadContent('en')});
     hebrewBtn.addEventListener('click',()=>{heSection.classList.add('active');engSection.classList.remove('active');hebrewBtn.classList.add('active');englishBtn.classList.remove('active');loadContent('he')});
