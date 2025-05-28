@@ -3,141 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Break Into Tech with Infinity Labs R&D</title>
+  <title>Free DevOps & Tech Courses in Israel | Infinity Labs R&D</title>
+  <meta name="description" content="Free high-tech training in Israel: DevOps, Software Development, Cybersecurity & AI Research. No tech background required. Infinity Labs R&D." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(to right, #f8fafc, #eef2f7);
-      color: #1f2937;
-      line-height: 1.6;
-    }
-
-    .container {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 2rem;
-      animation: fadeIn 1s ease-in-out;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    h1, h2, h3 {
-      font-weight: 700;
-      margin-bottom: 0.75rem;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-    }
-
-    h2 {
-      font-size: 2rem;
-    }
-
-    h3 {
-      font-size: 1.5rem;
-    }
-
-    p, ul {
-      margin-bottom: 1rem;
-      font-size: 1.125rem;
-    }
-
-    ul {
-      padding-left: 1.5rem;
-    }
-
-    a.button {
-      display: inline-block;
-      padding: 0.75rem 1.5rem;
-      background-color: #3b82f6;
-      color: white;
-      text-decoration: none;
-      border-radius: 10px;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.1);
-    }
-
-    a.button:hover {
-      background-color: #1d4ed8;
-      transform: scale(1.05);
-    }
-
-    .section {
-      margin-bottom: 3rem;
-      animation: fadeIn 1s ease-in-out;
-    }
-
-    .hebrew, .english {
-      display: none;
-    }
-
-    .hebrew.active, .english.active {
-      display: block;
-      animation: fadeIn 1s ease-in-out;
-    }
-
-    .language-toggle {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 2rem;
-      gap: 1rem;
-    }
-
-    .language-toggle button {
-      padding: 0.5rem 1.25rem;
-      font-size: 1rem;
-      font-weight: 600;
-      border: 2px solid #3b82f6;
-      border-radius: 8px;
-      cursor: pointer;
-      background-color: white;
-      color: #3b82f6;
-      transition: all 0.3s ease;
-    }
-
-    .language-toggle button:hover {
-      background-color: #e0f2fe;
-    }
-
-    .language-toggle button.active {
-      background-color: #3b82f6;
-      color: white;
-    }
-
-    .hebrew {
-      direction: rtl;
-      text-align: right;
-    }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2rem;
-      }
-
-      h2 {
-        font-size: 1.5rem;
-      }
-
-      h3 {
-        font-size: 1.25rem;
-      }
-
-      .language-toggle {
-        flex-direction: column;
-      }
-    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Inter',sans-serif;background:linear-gradient(to right,#f8fafc,#eef2f7);color:#1f2937;line-height:1.6;}
+    .container{max-width:960px;margin:0 auto;padding:2rem;animation:fadeIn 1s ease-in-out;}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+    h1,h2{font-weight:700;margin-bottom:.75rem} h1{font-size:2.5rem} h2{font-size:2rem}
+    p,ul{margin-bottom:1rem;font-size:1.125rem} ul{padding-left:1.5rem}
+    a.button{display:inline-block;padding:.75rem 1.5rem;background-color:#3b82f6;color:#fff;text-decoration:none;border-radius:10px;font-weight:600;transition:all .3s;box-shadow:0 4px 14px rgba(0,0,0,.1)}
+    a.button:hover{background-color:#1d4ed8;transform:scale(1.05)}
+    .section{margin-bottom:3rem;animation:fadeIn 1s ease-in-out}
+    .hebrew,.english{display:none}.hebrew.active,.english.active{display:block;animation:fadeIn 1s ease-in-out}
+    .language-toggle{display:flex;justify-content:center;margin-bottom:2rem;gap:1rem}
+    .language-toggle button{padding:.5rem 1.25rem;font-size:1rem;font-weight:600;border:2px solid #3b82f6;border-radius:8px;cursor:pointer;background:#fff;color:#3b82f6;transition:all .3s}
+    .language-toggle button:hover{background:#e0f2fe}
+    .language-toggle button.active{background:#3b82f6;color:#fff}
+    .hebrew{direction:rtl;text-align:right}
+    @media(max-width:600px){h1{font-size:2rem}h2{font-size:1.5rem}.language-toggle{flex-direction:column}}
   </style>
 </head>
 <body>
@@ -147,61 +32,48 @@
       <button id="hebrewBtn">עברית</button>
     </div>
 
-    <div class="english active">
+    <div class="english active section">
       <h1 id="title-en"></h1>
       <h2 id="subtitle-en"></h2>
       <p id="paragraph-en"></p>
+      <p id="paragraph2-en"></p>
+      <a id="cta-en" class="button" href="#" target="_blank">Check It Out</a>
     </div>
 
-    <div class="hebrew">
+    <div class="hebrew section">
       <h1 id="title-he"></h1>
       <h2 id="subtitle-he"></h2>
       <p id="paragraph-he"></p>
+      <p id="paragraph2-he"></p>
+      <a id="cta-he" class="button" href="#" target="_blank">לפרטים נוספים</a>
     </div>
   </div>
 
   <script>
-    const englishBtn = document.getElementById('englishBtn');
-    const hebrewBtn = document.getElementById('hebrewBtn');
-    const englishSection = document.querySelector('.english');
-    const hebrewSection = document.querySelector('.hebrew');
+    const englishBtn=document.getElementById('englishBtn'),
+          hebrewBtn=document.getElementById('hebrewBtn'),
+          engSection=document.querySelector('.english'),
+          heSection=document.querySelector('.hebrew');
 
-    async function loadContent(lang) {
-      try {
-        const res = await fetch(`content-${lang}.json`);
-        const data = await res.json();
-
-        if (lang === 'en') {
-          document.getElementById('title-en').textContent = data.title;
-          document.getElementById('subtitle-en').textContent = data.subtitle;
-          document.getElementById('paragraph-en').textContent = data.paragraph;
-        } else if (lang === 'he') {
-          document.getElementById('title-he').textContent = data.title;
-          document.getElementById('subtitle-he').textContent = data.subtitle;
-          document.getElementById('paragraph-he').textContent = data.paragraph;
-        }
-      } catch (err) {
-        console.error("Error loading content:", err);
+    async function loadContent(lang){
+      const res=await fetch(`content-${lang}.json`);
+      const data=await res.json();
+      if(lang==='en'){
+        document.getElementById('title-en').textContent=data.title;
+        document.getElementById('subtitle-en').textContent=data.subtitle;
+        document.getElementById('paragraph-en').textContent=data.paragraph;
+        document.getElementById('paragraph2-en').textContent=data.paragraph2;
+        document.getElementById('cta-en').href=data.cta;
+      } else {
+        document.getElementById('title-he').textContent=data.title;
+        document.getElementById('subtitle-he').textContent=data.subtitle;
+        document.getElementById('paragraph-he').textContent=data.paragraph;
+        document.getElementById('paragraph2-he').textContent=data.paragraph2;
+        document.getElementById('cta-he').href=data.cta;
       }
     }
-
-    englishBtn.addEventListener('click', () => {
-      englishSection.classList.add('active');
-      hebrewSection.classList.remove('active');
-      englishBtn.classList.add('active');
-      hebrewBtn.classList.remove('active');
-      loadContent('en');
-    });
-
-    hebrewBtn.addEventListener('click', () => {
-      hebrewSection.classList.add('active');
-      englishSection.classList.remove('active');
-      hebrewBtn.classList.add('active');
-      englishBtn.classList.remove('active');
-      loadContent('he');
-    });
-
-    // Load English by default
+    englishBtn.addEventListener('click',()=>{engSection.classList.add('active');heSection.classList.remove('active');englishBtn.classList.add('active');hebrewBtn.classList.remove('active');loadContent('en')});
+    hebrewBtn.addEventListener('click',()=>{heSection.classList.add('active');engSection.classList.remove('active');hebrewBtn.classList.add('active');englishBtn.classList.remove('active');loadContent('he')});
     loadContent('en');
   </script>
 </body>
