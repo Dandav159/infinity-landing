@@ -52,32 +52,28 @@
       position: fixed;
       bottom: 0;
       left: 0;
-      width: 400%;
-      height: 300px;
-      pointer-events: none;
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
       z-index: -1;
-      display: flex;
     }
     .wave {
-      flex: 1;
+      position: absolute;
+      bottom: 0;
+      width: 200%;
       height: 100%;
-      background: radial-gradient(ellipse at bottom, rgba(0, 119, 255, 0.2), rgba(255, 0, 150, 0.1));
-      animation: waveAnim 60s linear infinite;
-      will-change: transform;
+      background: url('data:image/svg+xml;utf8,<svg width="100%25" height="100%25" viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg"><path fill="%230077ff" fill-opacity="0.3" d="M0,160L48,165.3C96,171,192,181,288,181.3C384,181,480,171,576,154.7C672,139,768,117,864,133.3C960,149,1056,203,1152,208C1248,213,1344,171,1392,149.3L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+      background-size: 200% 100%;
+      animation: waveMove 30s linear infinite;
     }
-    .wave:nth-child(2) {
-      animation-delay: -30s;
-      opacity: 0.4;
-    }
-    @keyframes waveAnim {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
+    @keyframes waveMove {
+      0% { background-position-x: 0%; }
+      100% { background-position-x: -100%; }
     }
   </style>
 </head>
 <body>
   <div class="wave-container">
-    <div class="wave"></div>
     <div class="wave"></div>
   </div>
   <header>
