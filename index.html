@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="קורסי הייטק חינם עם התחייבות לעבודה - גם בלי ניסיון או תואר. קורסי דבאופס, סייבר, בינה מלאכותית ועוד, מיועדים למועמדים ללא רקע קודם. התחילו קריירה מצליחה בהייטק." />
-  <meta name="keywords" content="קורס הייטק ללא ניסיון, קורס הייטק חינם, קורס הייטק עם התחייבות לעבודה, כניסה להייטק ללא תואר, כניסה להייטק ללא ניסיון" />
+  <meta name="description" content="קורס הייטק חינם, גם ללא ניסיון או תואר. קורס הייטק עם התחייבות לעבודה במסלולים שונים: דבאופס, סייבר, בינה מלאכותית ועוד. קורס הייטק מומלץ לכניסה להייטק ללא תואר." />
+  <meta name="keywords" content="קורס הייטק חינם, קורס הייטק ללא ניסיון, קורס הייטק מומלץ, קורס הייטק עם התחייבות לעבודה, כניסה להייטק ללא תואר" />
   <meta name="author" content="deletech.info" />
-  <title>קורסי הייטק חינם עם התחייבות לעבודה | deletech.info</title>
+  <title>קורס הייטק חינם עם התחייבות לעבודה | deletech.info</title>
   <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet" />
   <style>
     body {
@@ -15,12 +15,15 @@
       background: #0d1117;
       color: #e6edf3;
       overflow-x: hidden;
+      position: relative;
     }
     header, .content, .faq, .footer {
       max-width: 800px;
       margin: 40px auto;
       padding: 20px;
       text-align: center;
+      position: relative;
+      z-index: 1;
     }
     h1 {
       font-size: 2.4em;
@@ -48,60 +51,87 @@
       text-decoration: none;
       margin-top: 20px;
     }
-    .wave-container {
+    .animation-container {
       position: fixed;
       bottom: 0;
       left: 0;
       width: 100%;
-      height: 200px;
-      overflow: hidden;
-      z-index: -1;
-    }
-    .wave {
-      position: absolute;
-      bottom: 0;
-      width: 200%;
       height: 100%;
-      background: url('data:image/svg+xml;utf8,<svg width="100%25" height="100%25" viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg"><path fill="%230077ff" fill-opacity="0.3" d="M0,160L48,165.3C96,171,192,181,288,181.3C384,181,480,171,576,154.7C672,139,768,117,864,133.3C960,149,1056,203,1152,208C1248,213,1344,171,1392,149.3L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
-      background-size: 200% 100%;
-      animation: waveMove 30s linear infinite;
+      overflow: hidden;
+      z-index: 0;
+      pointer-events: none;
     }
-    @keyframes waveMove {
-      0% { background-position-x: 0%; }
-      100% { background-position-x: -100%; }
+    .square {
+      position: absolute;
+      bottom: -50px;
+      background: linear-gradient(45deg, rgba(0,119,255,0.3), rgba(255,0,150,0.3));
+      border-radius: 10px;
+      opacity: 0;
+      animation: floatUp ease-in forwards;
+    }
+    @keyframes floatUp {
+      0% {
+        transform: translateY(100px) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.6;
+      }
+      50% {
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(-120vh) rotate(360deg);
+        opacity: 0;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="wave-container">
-    <div class="wave"></div>
-  </div>
+  <div class="animation-container" id="animation"></div>
   <header>
-    <h1>רוצים להיכנס להייטק בלי ניסיון או תואר?</h1>
-    <h2>אני בוגר של אחד המסלולים האלה — כאן כדי לעזור לכם להבין אם זה מתאים לכם</h2>
+    <h1>קורס הייטק חינם עם התחייבות לעבודה</h1>
+    <h2>הזדמנות אמיתית להיכנס להייטק — גם ללא ניסיון או תואר</h2>
   </header>
   <div class="content">
-    <p>היי, אני דניאל. עשיתי מסלול דבאופס, ולפני כן הייתי בדיוק איפה שאתם עכשיו — בלי ניסיון, בלי תואר, אבל עם רצון ללמוד ולעבוד בהייטק.</p>
-    <p>יש היום מסלולים שמציעים קורסים חינם לגמרי (כן, באמת). המודל פשוט — אתם לא משלמים מראש, אלא חותמים על חוזה שבמידה ותתקבלו לעבודה, תעבדו אצלם לשנתיים. זה נותן הזדמנות אמיתית להתחיל קריירה חדשה, גם אם אתם באים בלי רקע.</p>
+    <p>היי, אני דניאל. עשיתי קורס הייטק חינם במסלול דבאופס. לפני כן הייתי מורה לאנגלית, בלי רקע טכנולוגי בכלל.</p>
+    <p>הקורסים האלו נבנים במיוחד למי שאין לו ניסיון. לא צריך תואר, רק רצון ללמוד ולעבוד קשה. זה קורס הייטק עם התחייבות לעבודה — לא משלמים כלום מראש, ובסוף ההכשרה עובדים אצל החברה למשך שנתיים.</p>
+    <p>אם אתם מחפשים קורס הייטק מומלץ לכניסה להייטק ללא תואר — זה בדיוק המקום לבדוק.</p>
     <a class="button" href="https://go.ilrd.co.il/danielr" target="_blank">לפרטים על המסלול</a>
   </div>
   <div class="faq">
     <h2>שאלות נפוצות</h2>
-
-    <h3>מה זה בכלל קורס הייטק חינם?</h3>
-    <p>מדובר בקורסים שלא עולים כסף מראש — המודל עובד על זה שאם תעברו את ההכשרה ותשתלבו, תעבדו אצלם שנתיים. כלומר, אין פה סיכון כספי מראש, רק השקעה אמיתית של זמן ומאמץ.</p>
-
-    <h3>איך נכנסים להייטק בלי ניסיון או תואר?</h3>
-    <p>זה לגמרי אפשרי. הקורסים בנויים במיוחד למי שאין לו רקע קודם, ומכוונים להכין אתכם לעבודה אמיתית. זה לא קסם — אבל עם השקעה ומסגרת נכונה זה קורה.</p>
-
-    <h3>למי זה מתאים?</h3>
-    <p>למי שמוכן להתחייב, לעבוד קשה, ולהיכנס לזה ברצינות. זה מתאים לאנשים סקרנים, שאוהבים לפתור בעיות, ומחפשים מסלול אמיתי לקריירה.</p>
-
-    <h3>איך אני יכול לעזור?</h3>
-    <p>עברתי את זה בעצמי, אני יודע איך זה נראה מבפנים. אני פה כדי לענות על שאלות, להסביר ולכוון. אתם לא לבד.</p>
+    <h3>מה זה קורס הייטק חינם?</h3>
+    <p>קורס שלא עולה כסף מראש. אתם לומדים, מתפתחים מקצועית, ובסיום מתחילים לעבוד. התשלום מתבצע דרך העבודה בחברה עצמה לשנתיים.</p>
+    <h3>איך מתחילים קורס הייטק ללא ניסיון?</h3>
+    <p>פשוט נרשמים למסלול. אין דרישות מוקדמות מלבד אנגלית בסיסית ויכולות למידה. הקורס בנוי למתחילים גמורים.</p>
+    <h3>האם זה באמת קורס הייטק עם התחייבות לעבודה?</h3>
+    <p>כן. זה חלק מהמודל. בתום ההכשרה אתם משובצים לעבודה מעשית בתוך החברה.</p>
+    <h3>מה היתרון של קורס כזה לעומת קורס פרטי?</h3>
+    <p>קודם כל, זה קורס הייטק מומלץ בגלל שאין עלות התחלתית. שנית, אתם לומדים ממש בסביבה שמדמה מקום עבודה. זה שונה ממה שמציעים במכללות רגילות.</p>
+    <h3>מה אם אין לי תואר?</h3>
+    <p>אין שום בעיה. הרעיון הוא לאפשר כניסה להייטק ללא תואר וללא ניסיון קודם — כל עוד יש רצינות ומוכנות להתאמץ.</p>
   </div>
   <div class="footer">
     <p style="font-size: 1.3em;">שאלות? צריכים עזרה להבין אם זה מתאים לכם? דברו איתי: <a href="mailto:danroi2912@gmail.com">danroi2912@gmail.com</a></p>
   </div>
+  <script>
+    const container = document.getElementById('animation');
+    function createSquare() {
+      const square = document.createElement('div');
+      const size = Math.random() * 60 + 40;
+      const duration = 16 + Math.random() * 6;
+      const rotation = Math.random() * 720;
+      square.classList.add('square');
+      square.style.width = `${size}px`;
+      square.style.height = `${size}px`;
+      square.style.left = `${Math.random() * 100}%`;
+      square.style.animationDuration = `${duration}s`;
+      square.style.transform = `rotate(${rotation}deg)`;
+      container.appendChild(square);
+      setTimeout(() => square.remove(), duration * 1000);
+    }
+    setInterval(createSquare, 1200);
+  </script>
 </body>
 </html>
