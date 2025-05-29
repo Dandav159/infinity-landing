@@ -1,168 +1,119 @@
-<!-- index.html -->
 <!DOCTYPE html>
-<html lang="he">
+<html lang="he" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>להיכנס להייטק בחינם | קורסים איכותיים ללא ניסיון</title>
-  <meta name="description" content="קורסי הייטק חינם בישראל - ללא צורך בניסיון או תואר. קורסים בתחומי פיתוח, דבאופס, סייבר ובינה מלאכותית עם התחייבות לעבודה למתאימים." />
+  <meta name="description" content="קורסי הייטק חינם עם התחייבות לעבודה - גם בלי ניסיון או תואר. קורסי דבאופס, סייבר, בינה מלאכותית ועוד, מיועדים למועמדים ללא רקע קודם. התחילו קריירה מצליחה בהייטק." />
   <meta name="keywords" content="קורס הייטק ללא ניסיון, קורס הייטק חינם, קורס הייטק עם התחייבות לעבודה, כניסה להייטק ללא תואר, כניסה להייטק ללא ניסיון" />
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://deletech.info/" />
-  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
-  <meta property="og:title" content="קורסי הייטק חינם בישראל | ללא ניסיון או תואר">
-  <meta property="og:description" content="הזדמנות להיכנס להייטק ללא ניסיון או תואר. קורסים חינם עם התחייבות לעבודה למתאימים. פיתוח, דבאופס, סייבר ועוד.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://deletech.info/">
-  <meta property="og:image" content="/thumbnail.jpg">
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta name="author" content="deletech.info" />
+  <title>קורסי הייטק חינם עם התחייבות לעבודה | deletech.info</title>
+  <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet" />
   <style>
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:'Outfit','Inter',sans-serif;background:white;color:#1f2937;line-height:1.6;overflow-x:hidden;}
-    .container{max-width:900px;margin:0 auto;padding:2rem;text-align:center;animation:fadeIn 1s ease-in-out;position:relative;z-index:1;}
-    @keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-    h1,h2{font-weight:700;margin-bottom:.75rem} h1{font-size:2.75rem} h2{font-size:2rem}
-    p,ul{margin:1rem auto;font-size:1.3rem;max-width:700px;text-align:center} ul{padding-left:1.5rem;text-align:left}
-    a.button{display:inline-block;padding:.75rem 1.5rem;background-color:#3b82f6;color:#fff;text-decoration:none;border-radius:10px;font-weight:600;transition:all .3s;box-shadow:0 4px 14px rgba(0,0,0,.1);margin-top:1.5rem}
-    a.button:hover{background-color:#1d4ed8;transform:scale(1.05)}
-    .section{margin-bottom:4rem;animation:fadeIn 1s ease-in-out;position:relative;}
-    .hebrew,.english{display:none}.hebrew.active,.english.active{display:block;animation:fadeIn 1s ease-in-out}
-    .language-toggle{display:flex;justify-content:center;margin-bottom:2rem;gap:1rem}
-    .language-toggle button{padding:.5rem 1.25rem;font-size:1rem;font-weight:600;border:2px solid #3b82f6;border-radius:8px;cursor:pointer;background:#fff;color:#3b82f6;transition:all .3s}
-    .language-toggle button:hover{background:#e0f2fe}
-    .language-toggle button.active{background:#3b82f6;color:#fff}
-    .hebrew{direction:rtl;text-align:center}
-    @media(max-width:600px){h1{font-size:2rem}h2{font-size:1.5rem}.language-toggle{flex-direction:column}}
-
-    .wave-background {
+    body {
+      margin: 0;
+      font-family: 'Varela Round', sans-serif;
+      background: #fff;
+      color: #222;
+      overflow-x: hidden;
+    }
+    header, .content, .footer {
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.2em;
+    }
+    h2 {
+      font-size: 1.6em;
+      margin-bottom: 1em;
+    }
+    p {
+      font-size: 1.4em;
+      line-height: 1.8;
+      margin-bottom: 1.5em;
+    }
+    .button {
+      display: inline-block;
+      background: #0077ff;
+      color: #fff;
+      padding: 12px 24px;
+      font-size: 1.2em;
+      border-radius: 8px;
+      text-decoration: none;
+      margin-top: 20px;
+    }
+    .blog, .faq {
+      margin-top: 40px;
+      text-align: right;
+    }
+    .blog h3, .faq h3 {
+      margin-top: 1em;
+      color: #0077ff;
+    }
+    .wave-container {
       position: fixed;
       bottom: 0;
       left: 0;
-      z-index: -10;
-      width: 200%;
+      width: 100%;
       height: 300px;
-      overflow: hidden;
-      background: white;
+      pointer-events: none;
+      z-index: -1;
     }
     .wave {
       position: absolute;
-      bottom: 0;
       width: 200%;
-      height: 200px;
-      opacity: 0.25;
+      height: 100%;
+      background: linear-gradient(45deg, rgba(0, 119, 255, 0.2), rgba(255, 0, 150, 0.2));
+      animation: waveAnim 10s linear infinite;
+      transform: translateY(50%);
     }
-    .wave.blue {
-      fill: #3b82f6;
-      animation: wave1 60s linear infinite;
+    .wave:nth-child(2) {
+      animation-delay: -5s;
+      opacity: 0.5;
     }
-    .wave.purple {
-      fill: #ec4899;
-      animation: wave2 90s linear infinite;
-    }
-    @keyframes wave1 {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-    @keyframes wave2 {
-      0% { transform: translateX(-25%); }
-      100% { transform: translateX(-75%); }
-    }
-
-    footer {
-      font-size: 1rem;
-      margin-top: 2rem;
-      padding: 1rem;
-      color: #4b5563;
+    @keyframes waveAnim {
+      0% { transform: translateX(0) translateY(50%); }
+      100% { transform: translateX(-50%) translateY(50%); }
     }
   </style>
 </head>
 <body>
-  <div class="wave-background">
-    <svg class="wave blue" viewBox="0 0 1440 320" preserveAspectRatio="none">
-      <path d="M0,192L60,186.7C120,181,240,171,360,186.7C480,203,600,245,720,229.3C840,213,960,139,1080,133.3C1200,128,1320,192,1380,224L1440,256L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
-    </svg>
-    <svg class="wave purple" viewBox="0 0 1440 320" preserveAspectRatio="none">
-      <path d="M0,256L48,250.7C96,245,192,235,288,229.3C384,224,480,224,576,202.7C672,181,768,139,864,122.7C960,107,1056,117,1152,128C1248,139,1344,149,1392,154.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-    </svg>
+  <div class="wave-container">
+    <div class="wave"></div>
+    <div class="wave"></div>
   </div>
-
-  <div class="container">
-    <div class="language-toggle">
-      <button id="englishBtn">English</button>
-      <button id="hebrewBtn" class="active">עברית</button>
-    </div>
-
-    <div class="english section">
-      <h1 id="title-en"></h1>
-      <h2 id="subtitle-en"></h2>
-      <p id="paragraph-en"></p>
-      <p id="paragraph2-en"></p>
-      <a id="cta-en" class="button" href="#" target="_blank">Check It Out</a>
-      <footer id="footer-en"></footer>
-    </div>
-
-    <div class="hebrew active section">
-      <h1 id="title-he"></h1>
-      <h2 id="subtitle-he"></h2>
-      <p id="paragraph-he"></p>
-      <p id="paragraph2-he"></p>
-      <p id="paragraph3-he"></p>
-      <p id="paragraph4-he"></p>
-      <a id="cta-he" class="button" href="#" target="_blank">לפרטים נוספים</a>
-      <footer id="footer-he"></footer>
-    </div>
+  <header>
+    <h1>קורסי הייטק חינם עם התחייבות לעבודה</h1>
+    <h2>כניסה מהירה להייטק – גם בלי ניסיון או תואר</h2>
+  </header>
+  <div class="content">
+    <p>אנחנו כאן כדי לעזור לכם לעשות את הצעד הראשון לעבר קריירה בהייטק – גם אם אין לכם ניסיון קודם או תואר אקדמי. מגוון קורסים חינמיים עם התחייבות לעבודה למצטיינים: דבאופס, סייבר, פיתוח תוכנה ובינה מלאכותית.</p>
+    <p>ההכשרות ממוקדות ומעשיות, מתאימות במיוחד למי שרוצה להיכנס להייטק בלי תואר ובלי רקע קודם. כל מסלול כולל למידה פרקטית, צוותי פרויקטים וסימולציות של עולם העבודה האמיתי. ההכשרות כוללות תמיכה מקצועית והכנה לראיונות – ומיועדות לאנשים רציניים בלבד.</p>
+    <a class="button" href="https://www.infinitylabs.co.il" target="_blank">למידע נוסף והרשמה</a>
   </div>
+  <div class="blog">
+    <h2>מאמרים</h2>
+    <h3>איך להיכנס להייטק בלי ניסיון?</h3>
+    <p>בזכות מסלולי הכשרה חינמיים וממוקדים, גם אתם יכולים לפרוץ לעולם ההייטק. הדגש הוא על תרגול יומיומי, פרויקטים אמיתיים וסביבה המדמה את עולם העבודה. אין צורך בניסיון או תואר – רק רצון ויכולת להשקיע.</p>
 
-  <script>
-    const englishBtn = document.getElementById('englishBtn');
-    const hebrewBtn = document.getElementById('hebrewBtn');
-    const engSection = document.querySelector('.english');
-    const heSection = document.querySelector('.hebrew');
+    <h3>מה ההבדל בין קורסים חינמיים לקורסים בתשלום?</h3>
+    <p>קורסים חינמיים ממומנים לרוב על ידי גופים טכנולוגיים שמחפשים עובדים איכותיים. ההכשרות מציעות תהליך מיון קפדני, ליווי אישי, משימות יומיומיות והתחייבות לעבודה למצטיינים. אם אתם מוכנים להשקיע – זה הכיוון הנכון עבורכם.</p>
+  </div>
+  <div class="faq">
+    <h2>שאלות נפוצות</h2>
+    <h3>האם באמת אפשר להיכנס להייטק בלי תואר?</h3>
+    <p>כן. מסלולים כמו דבאופס וסייבר מותאמים לאנשים ללא תואר, עם דגש על התנסות מעשית ופרויקטים אמיתיים.</p>
 
-    async function loadContent(lang) {
-      try {
-        const res = await fetch(`content-${lang}.json?v=${new Date().getTime()}`);
-        const data = await res.json();
-        if (lang === 'en') {
-          document.getElementById('title-en').textContent = data.title;
-          document.getElementById('subtitle-en').textContent = data.subtitle;
-          document.getElementById('paragraph-en').textContent = data.paragraph;
-          document.getElementById('paragraph2-en').textContent = data.paragraph2;
-          document.getElementById('cta-en').href = data.cta;
-          document.getElementById('footer-en').textContent = data.footer;
-        } else {
-          document.getElementById('title-he').textContent = data.title;
-          document.getElementById('subtitle-he').textContent = data.subtitle;
-          document.getElementById('paragraph-he').textContent = data.paragraph;
-          document.getElementById('paragraph2-he').textContent = data.paragraph2;
-          document.getElementById('paragraph3-he').textContent = data.paragraph3;
-          document.getElementById('paragraph4-he').textContent = data.paragraph4;
+    <h3>האם צריך ידע קודם?</h3>
+    <p>לא. כל הקורסים בנויים כך שגם חסרי רקע יוכלו להתקדם, כל עוד יש לכם יכולת למידה ומוטיבציה גבוהה.</p>
 
-          document.getElementById('cta-he').href = data.cta;
-          document.getElementById('footer-he').textContent = data.footer;
-        }
-      } catch (err) {
-        console.error('Error loading content:', err);
-      }
-    }
-
-    englishBtn.addEventListener('click', () => {
-      engSection.classList.add('active');
-      heSection.classList.remove('active');
-      englishBtn.classList.add('active');
-      hebrewBtn.classList.remove('active');
-      loadContent('en');
-    });
-
-    hebrewBtn.addEventListener('click', () => {
-      heSection.classList.add('active');
-      engSection.classList.remove('active');
-      hebrewBtn.classList.add('active');
-      englishBtn.classList.remove('active');
-      loadContent('he');
-    });
-
-    loadContent('he');
-  </script>
+    <h3>כמה זמן נמשכים הקורסים?</h3>
+    <p>בין 6 ל-8 חודשים. במהלך התקופה תשתתפו בפרויקטים אמיתיים ותעברו סימולציות מהעולם המקצועי.</p>
+  </div>
+  <div class="footer">
+    <p><span style='font-size: 1.2em;'>שאלות? צריכים עזרה בהרשמה? דברו איתי: your@email.com</span></p>
+  </div>
 </body>
 </html>
