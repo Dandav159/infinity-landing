@@ -99,6 +99,7 @@
         container.appendChild(square);
         setTimeout(() => square.remove(), duration * 1000);
       }
+      createSquare();
       setInterval(createSquare, 900);
     });
   </script>
@@ -165,7 +166,7 @@
     }
     @keyframes floatUp {
       0% {
-        transform: translateY(120vh) rotate(0deg);
+        transform: translateY(0px) rotate(0deg);
         opacity: 1;
       }
       10% {
