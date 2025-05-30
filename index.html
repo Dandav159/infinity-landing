@@ -82,8 +82,8 @@
     "url": "https://deletech.info"
   }
   </script>
-    <script>
-    document.addEventListener("DOMContentLoaded", function () {
+  <script>
+    window.addEventListener("load", function () {
       const container = document.getElementById('animation');
       function createSquare() {
         const square = document.createElement('div');
@@ -99,7 +99,7 @@
         container.appendChild(square);
         setTimeout(() => square.remove(), duration * 1000);
       }
-      setInterval(createSquare, 500);
+      setInterval(createSquare, 900);
     });
   </script>
   <style>
