@@ -82,8 +82,8 @@
     "url": "https://deletech.info"
   }
   </script>
-  <script>
-    window.addEventListener("load", function () {
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
       const container = document.getElementById('animation');
       function createSquare() {
         const square = document.createElement('div');
@@ -157,7 +157,7 @@
     }
     .square {
       position: absolute;
-      bottom: -110px;
+      bottom: -100px;
       background: linear-gradient(45deg, rgba(0,119,255,0.3), rgba(255,0,150,0.3));
       border-radius: 10px;
       opacity: 0;
