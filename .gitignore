@@ -1,8 +1,5 @@
 posts/
-templates/
 generate.js
 node_modules/
 package.json
 package-lock.json
-!templates/style.css
-!templates/scripts/
