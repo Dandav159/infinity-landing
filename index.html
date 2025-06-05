@@ -1,217 +1,45 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
+  
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="קורס הייטק חינם, גם ללא ניסיון או תואר. קורס הייטק עם התחייבות לעבודה במסלולים שונים: דבאופס, סייבר, בינה מלאכותית ועוד. קורס הייטק מומלץ לכניסה להייטק ללא תואר." />
-  <meta name="keywords" content="קורס הייטק חינם, קורס הייטק ללא ניסיון, קורס הייטק מומלץ, קורס הייטק עם התחייבות לעבודה, כניסה להייטק ללא תואר" />
-  <meta name="author" content="deletech.info" />
-  <link rel="icon" type="image/png" href="https://deletech.info/favicon.png" sizes="512x512">
-  <title>קורס הייטק חינם עם התחייבות לעבודה</title>
+  <title>בואו להכיר קורס הייטק ללא עלות עם התחייבות לעבודה</title>
+  <meta name="description" content="בלוג אישי על דבאופס, הייטק והסבת מקצוע. טיפים, מדריכים ותובנות ממישהו שעשה את הדרך." />
   <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet" />
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "מה זה קורס הייטק חינם?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "זה קורס שלא עולה לכם כסף מראש. אתם לומדים, מתפתחים מקצועית, ובסיום ההכשרה משתלבים בעבודה אצל אחת הלקוחות של החברה. התשלום מתבצע דרך העבודה הזו."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "איך מתחילים קורס הייטק ללא ניסיון?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "נרשמים למסלול, עוברים תהליך מיון, ומתחילים ללמוד. אין צורך בניסיון קודם, רק נכונות ללמוד ולהשקיע."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "האם זה באמת קורס הייטק עם התחייבות לעבודה?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "תחשבו על זה ככה, הקורס רק יקבל כסף אם הוא יכניס אתכם לעבודה, כך שתהיו בטוחים שהם יתחייבו על כמה שאפשר לשלב אתכם אצל לקוח."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "מה היתרון של קורס כזה לעומת קורסים אחרים?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "זה קורס הייטק מומלץ כי אין עלות התחלתית, ואתם לומדים בצורה שדומה לעבודה אמיתית. פחות הרצאות, יותר אתגרים ודגש על למידה עצמית."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "מה אם אין לי תואר?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "אם מדובר במסלול דבאופס או סייבר, זה ממש לא חובה. המסלולים האלה נבנו במיוחד כדי לאפשר כניסה להייטק ללא תואר — כל עוד יש לכם מוטיבציה ורצינות."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "מי אתה?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "כמו שאמרתי, קוראים לי דניאל. תוך שישה חודשים בלבד, עברתי מאחד בלי שום ניסיון או רקע למהנדס דבאופס וענן בתעשיית הפינטק. אמנם עברתי הסבת מקצוע אבל עדיין אוהב ללמד ולעזור. אל תהססו לפנות אליי עם שאלות!"
-        }
-      }
-    ]
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "דניאל",
-    "description": "בוגר קורס דבאופס בהייטק, עוזר לאנשים חדשים להיכנס לתחום הטכנולוגיה בישראל.",
-    "email": "danroi2912@gmail.com",
-    "url": "https://deletech.info"
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "deletech.info",
-    "url": "https://deletech.info"
-  }
-  </script>
-    <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const container = document.getElementById('animation');
-      function createSquare() {
-        const square = document.createElement('div');
-        const size = Math.random() * 60 + 40;
-        const duration = 16 + Math.random() * 6;
-        const rotation = Math.random() * 720;
-        square.classList.add('square');
-        square.style.width = `${size}px`;
-        square.style.height = `${size}px`;
-        square.style.left = `${Math.random() * 100}%`;
-        square.style.animationDuration = `${duration}s`;
-        square.style.transform = `rotate(${rotation}deg)`;
-        container.appendChild(square);
-        setTimeout(() => square.remove(), duration * 1000);
-      }
-      createSquare();
-      setInterval(createSquare, 800);
-    });
-  </script>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Varela Round', sans-serif;
-      background: #0d1117;
-      color: #e6edf3;
-      overflow-x: hidden;
-      position: relative;
-    }
-    header, .content, .faq, .footer {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 20px;
-      text-align: center;
-      position: relative;
-      z-index: 1;
-    }
-    h1 {
-      font-size: 2.4em;
-    }
-    h2 {
-      font-size: 1.8em;
-      margin-bottom: 1em;
-    }
-    h3 {
-      color: #58a6ff;
-    }
-    p {
-      font-size: 1.5em;
-      line-height: 1.8;
-      margin-bottom: 1.5em;
-      text-align: right;
-    }
-    .button {
-      display: inline-block;
-      background: #238636;
-      color: #fff;
-      padding: 14px 28px;
-      font-size: 1.3em;
-      border-radius: 8px;
-      text-decoration: none;
-      margin-top: 20px;
-    }
-    .animation-container {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      z-index: 0;
-      pointer-events: none;
-    }
-    .square {
-      position: absolute;
-      bottom: -100px;
-      background: linear-gradient(45deg, rgba(0,119,255,0.3), rgba(255,0,150,0.3));
-      border-radius: 10px;
-      opacity: 0;
-      animation: floatUp ease-in forwards;
-    }
-    @keyframes floatUp {
-      0% {
-        transform: translateY(0px) rotate(0deg);
-        opacity: 1;
-      }
-      10% {
-        opacity: 0.7;
-      }
-      70% {
-        opacity: 0;
-      }
-      100% {
-        transform: translateY(-120vh) rotate(360deg);
-        opacity: 0;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="../templates/style.css" />
+  <link rel="icon" type="image/png" href="https://deletech.info/favicon.png" />
 </head>
+  
 <body>
   <div class="animation-container" id="animation"></div>
-  <header>
-    <h1>קורס הייטק חינם עם התחייבות לעבודה</h1>
-    <h2>הזדמנות אמיתית להיכנס להייטק — גם ללא ניסיון או תואר</h2>
-  </header>
-  <div class="content">
-    <p>היי, אני דניאל! עשיתי קורס הייטק חינם במסלול DevOps. לפני כן הייתי מורה לאנגלית, בלי רקע טכנולוגי בכלל.</p>
-    <p>הקורס מציע ארבעה מסלולים: פיתוח, DevOps, סייבר ובינה מלאכותית. המסלולים מתאימים גם לאנשים ללא ניסיון. זה קורס הייטק עם התחייבות לעבודה: לא משלמים כלום מראש, ובסוף ההכשרה עובדים דרך החברה אצל חברות מובילות בתעשייה, למשך שנתיים.</p>
-    <p>אם אתם מחפשים קורס הייטק מומלץ, זה מקום ששווה לבדוק. ואם יש לכם שאלות או התלבטויות — אני יותר מאשמח לעזור ולכוון!</p>
-    <a class="button" href="https://go.ilrd.co.il/danielr" target="_blank">לפרטים על הקורס</a>
+
+  <div class="cta-container">
+    <a href="https://go.ilrd.co.il/danielr" class="button" target="_blank">לפרטים על הקורס</a>
   </div>
-  <div class="faq">
-    <h2>שאלות נפוצות</h2>
-    <h3>מה זה קורס הייטק חינם?</h3>
-    <p>זה קורס שלא עולה לכם כסף מראש. אתם לומדים, מתפתחים מקצועית, ובסיום ההכשרה משתלבים בעבודה אצל אחת הלקוחות של החברה.</p>
-    <h3>איך מתחילים קורס הייטק ללא ניסיון?</h3>
-    <p>נרשמים למסלול, עוברים תהליך מיון, ומתחילים ללמוד. אין צורך בניסיון קודם, רק נכונות ללמוד ולהשקיע.</p>
-    <h3>האם זה באמת קורס הייטק עם התחייבות לעבודה?</h3>
-    <p>תחשבו על זה ככה, הקורס רק יקבל כסף אם הוא יכניס אתכם לעבודה, כך שתהיו בטוחים שהם יתחייבו על כמה שאפשר לשלב אתכם אצל לקוח.</p>
-    <h3>מה היתרון של קורס כזה לעומת קורסים אחרים?</h3>
-    <p>זה קורס הייטק מומלץ כי אין עלות התחלתית, ואתם לומדים בצורה שדומה לעבודה אמיתית. פחות הרצאות, יותר אתגרים ודגש על למידה עצמית.</p>
-    <h3>מה אם אין לי תואר?</h3>
-    <p>אם מדובר במסלול DevOps או סייבר, זה ממש לא חובה. המסלולים האלה נבנו במיוחד כדי לאפשר כניסה להייטק ללא תואר — כל עוד יש לכם מוטיבציה ורצינות.</p>
-    <h3>מי אתה?</h3>
-    <p>כמו שאמרתי, קוראים לי דניאל. תוך שישה חודשים בלבד, עברתי מאחד בלי שום ניסיון או רקע למהנדס DevOps וענן בתעשיית הפינטק. אמנם עברתי הסבת מקצוע אבל עדיין אוהב ללמד ולעזור. אל תהססו לפנות אליי עם שאלות!</p>
-  </div>
-  <div class="footer">
-    <p style="font-size: 1.3em;">שאלות? צריכים עזרה להבין אם זה מתאים לכם? דברו איתי: danroi2912@gmail.com</p>
-  </div>
+
+  <main class="content glass-box">
+    <h1>ברוכים הבאים!</h1>
+<h3>מי אני?</h3>
+<p>היי, קוראים לי דניאל!</p>
+<p>עד לפני שנה הייתי מורה לאנגלית בלי שום רקע טכנולוגי.
+פה ושם מתעניין בקוד אבל לא משהו רציני.</p>
+<p>שמעתי מחבר על קורס הייטק חינם עם התחייבות לעבודה — לא משלמים כלום מראש, ובסוף עובדים דרך החברה אצל לקוחות שלהם. אמרתי לעצמי: &quot;מה יש להפסיד?&quot;</p>
+<h3>איך זה עובד?</h3>
+<p>הקורס בנוי כמו עבודה אמיתית. לא הרצאות. אתגרים, משימות, ולימוד עצמי.</p>
+<p>בהתחלה זה מאוד קשה להתאקלם לקצב המוגבר, אבל לאט לאט נכנסים לזה. תוך כמה חודשים הרגשתי שאני בונה לֹעצמי ידע וביטחון ביכולת להצליח באמת להשתלב.</p>
+<p>בסיום ההכשרה, אתה נכנס לעבוד בתור עובד קבלן של החברה אצל אחת מהלקוחות שלהם.
+מדובר בחברות מובילות בכל התחומים, שבהן תצברו ניסיון עשיר ודלת כניסה לעולם ההייטק.</p>
+<h3>מה המסר שלי?</h3>
+<p>אם תמיד רציתם להשתלב בעולם ההייטק, אין לכם ניסיון, ולא בדיוק יודעים מאיפה להתחיל – אל תוותרו מראש. זה לגמרי אפשרי.
+אני פה לשתף את הדרך שלי ולהציע ליווי. אם יש לכם שאלות, אתם מוזמנים לשלוח לי מייל בכל שלב!</p>
+<p>בנוסף, הרמתי את האמר הזה כדי לשתף ידע וניסיון שאני צובר תוך כדי עבודה. אולי אפילו בתור דוקומנטציה לעצמי. אם יעזור למישהו בהמשך הדרך, מעולה!</p>
+<hr>
+<p>📩 <strong>אפשר לכתוב לי לכתובת</strong>: <a href="mailto:danroi2912@gmail.com">danroi2912@gmail.com</a></p>
+
+  </main>
+
+  <script src="../templates/scripts/animate_squares.js"></script>
 </body>
+  
 </html>
