@@ -44,6 +44,11 @@ a {
 }
 
 .nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 2;
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(8px);
   padding: 10px 20px;
