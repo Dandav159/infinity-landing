@@ -27,14 +27,12 @@ header, .content, .footer {
   color: white;
   padding: 14px 28px;
   font-size: 1.2em;
-  border-radius: 8px;
+  border-radius: 20px;
   text-decoration: none;
   font-weight: bold;
-  transition: background 0.3s;
   transition: border-radius 0.3s ease;
 }
 .button:hover {
-  background: #2ea043;
   border-radius: 0px;
 }
 
