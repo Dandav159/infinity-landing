@@ -43,6 +43,7 @@ h1 {
 h2 {
   font-size: 1.8em;
   margin-bottom: 1em;
+  color: #58a6ff;
 }
 
 p {
@@ -55,10 +56,6 @@ p {
 a {
   color: #58a6ff;
   text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
 }
 
 .glass-box {
