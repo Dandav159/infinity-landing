@@ -41,7 +41,11 @@ h1 {
 }
 
 h2 {
-  font-size: 1.8em;
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.6em;
   margin-bottom: 1em;
   color: #58a6ff;
 }
