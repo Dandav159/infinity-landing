@@ -59,8 +59,8 @@ a {
 }
 
 .nav-square {
-  width: 64px;
-  height: 64px;
+  width: 42px;
+  height: 42px;
   background: linear-gradient(45deg, rgba(0,119,255,1), rgba(255,0,150,1));
   border-radius: 5px;
   display: inline-block;
