@@ -53,16 +53,16 @@ a {
   backdrop-filter: blur(8px);
   padding: 10px 20px;
   text-align: center;
-  border-radius: 10px;
+  border-radius: 5px;
   margin: 20px auto;
   max-width: 800px;
 }
 
 .nav-square {
-  width: 36px;
-  height: 36px;
+  width: 64px;
+  height: 64px;
   background: linear-gradient(45deg, rgba(0,119,255,1), rgba(255,0,150,1));
-  border-radius: 10px;
+  border-radius: 5px;
   display: inline-block;
   cursor: pointer;
 }
@@ -76,15 +76,15 @@ a {
   border-radius: 20px;
   text-decoration: none;
   font-weight: bold;
-  transition: border-radius 0.3s ease;
+  transition: border-radius 0.4s ease;
 }
 .button:hover {
-  border-radius: 10px;
+  border-radius: 0px;
 }
 
 .glass-box {
   background: rgba(255, 255, 255, 0.05);
-  border-radius: 10px;
+  border-radius: 5px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
